@@ -1,6 +1,6 @@
 {
   "name": "skyjump",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Zero-friction AWS EC2/SSM shell sessions, bastion jumps, and automatic RDS/Redis port forwarding across private VPCs.",
   "keywords": [
     "aws",
