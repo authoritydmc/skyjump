@@ -1,0 +1,5 @@
+node_modules
+dist
+.skyjump
+*.log
+.DS_Store
