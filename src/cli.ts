@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Command } from "commander";
 import * as p from "@clack/prompts";
 import pc from "picocolors";
@@ -187,7 +188,7 @@ async function main() {
   program
     .name("skyjump")
     .description("Zero-friction AWS EC2/SSM shell sessions and automatic RDS/Redis port forwarding across private VPCs.")
-    .version("1.0.0", "-v, --version", "Output current version")
+    .version("1.0.1", "-v, --version", "Output current version")
     .option("-r, --region <region>", "AWS region to target")
     .option("-p, --profile <profile>", "AWS CLI profile");
 
