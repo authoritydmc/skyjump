@@ -1,0 +1,75 @@
+{
+  "name": "skyjump",
+  "version": "1.0.0",
+  "description": "Zero-friction AWS EC2/SSM shell sessions, bastion jumps, and automatic RDS/Redis port forwarding across private VPCs.",
+  "keywords": [
+    "aws",
+    "ec2",
+    "ssm",
+    "rds",
+    "bastion",
+    "tunnel",
+    "port-forwarding",
+    "redis",
+    "elasticache",
+    "developer-tools",
+    "cli"
+  ],
+  "author": "authoritydmc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/authoritydmc/skyjump.git"
+  },
+  "bugs": {
+    "url": "https://github.com/authoritydmc/skyjump/issues"
+  },
+  "homepage": "https://github.com/authoritydmc/skyjump#readme",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "skyjump": "./dist/cli.js",
+    "sj": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "tsx --test src/test/skyjump.test.ts",
+    "lint": "eslint src/ --ext .ts",
+    "prepublishOnly": "npm run build && npm test",
+    "release:patch": "npm version patch && git push origin main --follow-tags",
+    "release:minor": "npm version minor && git push origin main --follow-tags",
+    "release:major": "npm version major && git push origin main --follow-tags"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ec2": "^3.658.0",
+    "@aws-sdk/client-elasticache": "^3.658.0",
+    "@aws-sdk/client-rds": "^3.658.0",
+    "@aws-sdk/client-ssm": "^3.658.0",
+    "@clack/prompts": "^0.7.0",
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.2.4",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
