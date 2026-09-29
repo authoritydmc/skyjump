@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // src/cli.ts
 import { Command } from "commander";
 import * as p from "@clack/prompts";
@@ -562,7 +564,7 @@ async function runDoctor(options) {
 }
 async function main() {
   const program = new Command();
-  program.name("skyjump").description("Zero-friction AWS EC2/SSM shell sessions and automatic RDS/Redis port forwarding across private VPCs.").version("1.0.0", "-v, --version", "Output current version").option("-r, --region <region>", "AWS region to target").option("-p, --profile <profile>", "AWS CLI profile");
+  program.name("skyjump").description("Zero-friction AWS EC2/SSM shell sessions and automatic RDS/Redis port forwarding across private VPCs.").version("1.0.1", "-v, --version", "Output current version").option("-r, --region <region>", "AWS region to target").option("-p, --profile <profile>", "AWS CLI profile");
   program.command("ec2 [target]").description("Connect to an EC2 instance shell via AWS SSM").action(async (target, cmdOptions) => {
     const globalOpts = program.opts();
     if (target) {
